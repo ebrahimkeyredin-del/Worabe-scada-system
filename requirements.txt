@@ -1,0 +1,12 @@
+streamlit
+pandas
+numpy
+matplotlib
+requests
+bcrypt
+reportlab
+scikit-learn
+statsmodels
+plotly
+streamlit-folium
+folium
