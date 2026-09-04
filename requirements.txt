@@ -10,3 +10,5 @@ statsmodels
 plotly
 streamlit-folium
 folium
+psycopg2-binary
+sqlalchemy
