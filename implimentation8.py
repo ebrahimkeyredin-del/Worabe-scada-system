@@ -3,6 +3,24 @@ import random
 import time
 from datetime import datetime
 import psycopg2
+import os
+import threading
+from http.server import HTTPServer, BaseHTTPRequestHandler
+
+# Render የ Port ጥያቄን ለመመለስ የሚያገለግል ነፃ Dummy Server
+class SimpleHandler(BaseHTTPRequestHandler):
+    def do_GET(self):
+        self.send_response(200)
+        self.end_headers()
+        self.wfile.write(b"SCADA Engine is Running!")
+
+def run_dummy_server():
+    port = int(os.environ.get("PORT", 10000))
+    server = HTTPServer(('0.0.0.0', port), SimpleHandler)
+    server.serve_forever()
+
+# Dummy Server በስተጀርባ እንዲነሳ ማድረግ
+threading.Thread(target=run_dummy_server, daemon=True).start()
 
 # 1. Supabase PostgreSQL Connection String
 DATABASE_URL = "postgresql://postgres.iagzsbwlrxosibrpzaue:Worabe%23Scada2026%21System@aws-0-eu-central-1.pooler.supabase.com:6543/postgres"
