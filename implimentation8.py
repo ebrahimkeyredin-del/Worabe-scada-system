@@ -5,7 +5,7 @@ from datetime import datetime
 import psycopg2
 
 # 1. Supabase PostgreSQL Connection String
-DATABASE_URL = "postgresql://postgres:Worabe#Scada2026!System@db.iagzsbwlrxosibrpzaue.supabase.co:5432/postgres"
+DATABASE_URL = "postgresql://postgres.iagzsbwlrxosibrpzaue:Worabe%23Scada2026%21System@aws-0-eu-central-1.pooler.supabase.com:6543/postgres"
 
 
 def init_db():
